@@ -120,11 +120,6 @@ export class BookService extends BaseResponse {
     }
 
     const update = await this.bookRepository.save({ ...updateBookDto, id: id });
-    // return {
-    //   status: 'success',
-    //   message: 'Berhasil update buku',
-    //   data: update,
-    // }
 
     return this._Success('Berhasil mengupdate Buku', update)
   }
@@ -159,11 +154,6 @@ export class BookService extends BaseResponse {
           }
         })
       )
-      // return {
-      //   status: 'Ok',
-      //   message: `Berhasil menambahkan buku sebanyak ${berhasil} dan gagal sebanyak ${gagal}`,
-      //   data: payload
-      // }
       return this._Success(`Berhasil menambahkan buku sebanyak ${berhasil} dan gagal sebanyak ${gagal}`, payload)
     } catch {
       throw new HttpException('ada kesalahan', HttpStatus.BAD_REQUEST)

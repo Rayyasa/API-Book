@@ -46,6 +46,4 @@ export class BookController {
   bulkDeleteBook(@Body() payload:DeleteBooksDto) {
     return this.bookService.bulkDelete(payload)
   }
-
-
 }
